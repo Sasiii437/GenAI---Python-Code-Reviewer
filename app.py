@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 import os
-
-ai.configure(api_key=os.getenv(API_KEY))
+api_key = st.secrets["general"]["API_KEY"]
+ai.configure(api_key=API_KEY)
 
 sys_prompt = """ You are a great Python code reviewer and you work is to review the user input python code and you want to find the bugs in it and want to generate the bug report and also to give the explanation of corrected code. You have to provide the information without any grammar mistakes.
                 You have to give the code by fixing the errors to the user and its explanation . Don't miss the explanation too and usecases of the corrected code in Python. First give Bug Report and after that corrected code. Give the side headings in Bold and size should be greater than normal text, like thrice the size of normal text .
